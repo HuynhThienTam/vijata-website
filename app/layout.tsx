@@ -34,7 +34,6 @@ export default function RootLayout({
         <TopBar/>
         <Header/>
         {children}
-        <div className="py-10 z-0"></div>
         <Footer/>
       </body>
     </html>
