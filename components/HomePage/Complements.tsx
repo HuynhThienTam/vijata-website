@@ -46,7 +46,7 @@ export default function Complements() {
         }}
       />
 
-      <div className="grid grid-cols-3 gap-2 relative">
+      <div className="grid grid-cols-3 gap-2 relative ">
         {compliments.map((c, idx) => (
           <article
             key={idx}
@@ -64,7 +64,7 @@ export default function Complements() {
             </h3>
             <p className="mt-3 text-gray-600 text-lg max-w-[75%]">{c.text}</p>
 
-            <span className="mt-auto block" />
+            {/* <span className="mt-auto block bg-amber-200" /> */}
           </article>
         ))}
       </div>

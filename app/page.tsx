@@ -1,4 +1,5 @@
 import Complements from "@/components/HomePage/Complements";
+import DisplayImages from "@/components/HomePage/DisplayImages";
 import Feeling from "@/components/HomePage/Feeling";
 import LetsMeet from "@/components/HomePage/LetsMeet";
 import VideoShowcase from "@/components/HomePage/VideoShowcase";
@@ -12,6 +13,7 @@ const HomePage = () => {
       <Complements/>
       <div className="py-18"/>
       <Feeling/>
+      <DisplayImages/>
     </div>
   );
 };
