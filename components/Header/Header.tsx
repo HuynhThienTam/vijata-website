@@ -30,7 +30,7 @@ export default function Header() {
         <Navbar />
       </div>
       {/* Spacer giữ chỗ khi header là fixed */}
-      <div className={`${isShrunk ? "h-[122px]" : "h-0"} bg-transparent`}></div>
+      <div className={`${isShrunk ? "h-[102px]" : "h-0"} bg-white `}></div>
       
     </div>
   );

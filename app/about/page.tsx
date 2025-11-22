@@ -6,7 +6,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-white">
       <BriefInfo/>
       <MottoAndFigures/>
       <NotableActivities/>

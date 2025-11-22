@@ -11,48 +11,48 @@ export default function Footer() {
   ];
   return (
     <footer className="w-full bg-blue-600 text-white ">
-      <div className="w-[90%] mx-auto flex gap-8 pt-16 pb-20">
+      <div className="w-[90%] mx-auto flex gap-8 pt-12 pb-16">
         {/* Left Column: Logo + Name */}
         <div className="w-3/10 flex flex-col items-center ">
           <img
             src="/images/VIJATA.png"
             alt="Logo"
-            className="w-52 h-auto mb-3"
+            className="w-40 h-auto mb-3"
           />
-          <p className="text-lg font-semibold">VIJATA Academy</p>
+          <p className="text-sm font-semibold">VIJATA Academy</p>
         </div>
 
         {/* Middle Column: Contact Details */}
-        <div className="w-1/4 flex flex-col gap-y-7">
-          <h3 className="text-2xl font-semibold mb-3">Our contact details:</h3>
+        <div className="w-1/4 flex flex-col gap-y-5">
+          <h3 className="text-base font-semibold mb-3">Our contact details:</h3>
           <div className="flex items-center gap-3">
             <GrLocation className="w-4 h-4 text-white"/>
-             <p className="text-base font-semibold pl-2">123 Example Street, Hanoi</p>
+             <p className="text-sm font-medium pl-2">123 Example Street, Hanoi</p>
           </div>
           <div className="flex items-center gap-3">
             <LuClock className="w-4 h-4 text-white"/>
-             <p className="text-base font-semibold pl-2">Mon - Fri: 8AM - 6PM</p>
+             <p className="text-sm font-medium pl-2">Mon - Fri: 8AM - 6PM</p>
           </div>
           <div className="flex items-center gap-3">
             <MdOutlineEmail className="w-4 h-4 text-white"/>
-            <p className="text-base font-semibold pl-2">info@vijata.com</p>
+            <p className="text-sm font-medium pl-2">info@vijata.com</p>
           </div>
           <div className="flex items-center gap-3">
             <HiMiniDevicePhoneMobile className="w-4 h-4 text-white"/>
-            <p className="text-base font-semibold pl-2">0123 456 789</p>
+            <p className="text-sm font-medium pl-2">0123 456 789</p>
           </div>
         </div>
 
         {/* Right Column: Partners */}
         <div className=" flex flex-col">
-          <h3 className="text-xl font-semibold mb-3">Our Partners:</h3>
+          <h3 className="text-base font-semibold mb-3">Our Partners:</h3>
           <div className="grid grid-cols-2 gap-4">
             {partners.map((partner, idx) => (
               <div key={idx} className="flex flex-col items-center">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className=" h-16 object-cover"
+                  className=" h-12 object-cover"
                 />
                 <p className="mt-2 text-sm">{partner.name}</p>
               </div>
@@ -62,7 +62,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Part */}
-      <div className="w-full text-center text-sm mt-8 border-t border-white/30 py-4">
+      <div className="w-full text-center text-xs mt-6 border-t border-white/30 py-2">
         © {new Date().getFullYear()} VIJATA Academy. All rights reserved.
       </div>
     </footer>

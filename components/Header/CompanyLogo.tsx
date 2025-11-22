@@ -54,7 +54,7 @@ const CompanyLogo = ({ isShrunk }: Props) => {
           <Image
             src="/images/VIJATA.png"
             alt="Logo"
-            width={isShrunk ? 60 : 100}
+            width={isShrunk ? 50 : 80}
             height={isShrunk ? 30 : 50}
             className="transition-all"
           />

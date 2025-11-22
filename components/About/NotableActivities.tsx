@@ -7,8 +7,8 @@ export default function NotableActivities() {
   ];
 
   return (
-    <section className="w-[90%] mx-auto pb-12 pt-56">
-      <h2 className="text-4xl font-extrabold text-rose-600 text-center mb-20">Our Notable Activities</h2>
+    <section className="w-[90%] mx-auto pb-8 pt-40">
+      <h2 className="text-3xl font-extrabold text-rose-600 text-center mb-20">Our Notable Activities</h2>
       <div className="flex flex-col gap-12">
         {activities.map((a, idx) => {
           const isEven = idx % 2 === 0; // 0-based index → 0,2,4 là even
@@ -16,8 +16,8 @@ export default function NotableActivities() {
           return (
             <div
               key={idx}
-              className={`flex flex-col md:flex-row items-center gap-12 py-4 ${
-                isEven ? "md:flex-row-reverse" : ""
+              className={`flex flex-col  items-center gap-12 py-4 ${
+                isEven ? "md:flex-row-reverse" : "md:flex-row"
               }`}
             >
               {/* Ảnh */}
@@ -31,8 +31,8 @@ export default function NotableActivities() {
 
               {/* Nội dung */}
               <div className="w-full md:w-4/7 ">
-                <h3 className="text-4xl font-bold  mb-2 ">{a.title}</h3>
-                <p className="text-gray-600 text-[1.25rem] leading-relaxed">{a.text}</p>
+                <h3 className="text-2xl font-bold  mb-2 text-gray-600">{a.title}</h3>
+                <p className="text-gray-600 text-[1rem] leading-relaxed">{a.text}</p>
               </div>
             </div>
           );

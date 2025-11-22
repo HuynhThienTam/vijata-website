@@ -51,7 +51,7 @@ export default function Navbar() {
               <li key={item.href} className="relative group">
                 <Link
                   href={item.href}
-                  className={`text-xl transition ${
+                  className={`text-base font-bold transition ${
                     isActive
                       ? "text-orange-400"
                       // : "text-blue-600 group-hover:text-orange-400"

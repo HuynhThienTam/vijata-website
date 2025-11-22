@@ -50,7 +50,9 @@ export default function Timeline() {
 
   return (
     <section className="w-full mx-auto bg-amber-50 py-12">
-      <h2 className="text-4xl text-blue-600 font-extrabold text-center mb-16">Our Timeline</h2>
+      <h2 className="text-3xl text-blue-600 font-extrabold text-center mb-16">
+        Our Timeline
+      </h2>
 
       <div className="relative">
         {/* Center vertical base line */}
@@ -66,7 +68,7 @@ export default function Timeline() {
             const isActive = active[idx];
             // const circleSize = 56; // px
             const circleSize = 96; // px
-            const strokeWidth = 8;
+            const strokeWidth = 6;
             const radius = (circleSize - strokeWidth) / 2; // inner radius
             const circumference = 2 * Math.PI * radius;
             const dashOffset = isActive ? 0 : circumference;
@@ -181,7 +183,7 @@ export default function Timeline() {
                     {/* Visible (md:block) for desktop, for mobile we use different spacing */}
                     {!isFinal && (
                       <div
-                        className="hidden md:block w-[8px] bg-gray-200 overflow-hidden"
+                        className="hidden md:block w-[6px] bg-gray-200 overflow-hidden"
                         style={{
                           height: 80,
                         }}
@@ -191,7 +193,7 @@ export default function Timeline() {
                           style={{
                             height: isActive ? "100%" : "0%",
                             transition: "height 700ms linear",
-                            transitionDelay:  "900ms",
+                            transitionDelay: "900ms",
                           }}
                         />
                       </div>

@@ -33,7 +33,7 @@ export default function TopBar() {
   return (
     <div
       id="topbar"
-      className="w-full bg-blue-600 py-1 px-[3%] flex justify-between items-center text-sm"
+      className="w-full bg-blue-600 py-0 px-[3%] flex justify-between items-center text-[12px]"
     >
       {/* Language Selector */}
       <div
@@ -45,20 +45,20 @@ export default function TopBar() {
           onClick={() => setOpen((prev) => !prev)}
         >
           <span>English</span>
-          <span  className="text-xs">▼</span>
+          <span  className="text-[8px]">▼</span>
         </div>
 
         {open && (
-          <div className="absolute left-0 mt-1 bg-white shadow-md rounded-md w-36 text-black z-100">
-            <div className="flex items-center px-2 py-1 hover:bg-gray-300 cursor-pointer">
+          <div className="absolute left-0 mt-0 bg-white shadow-md rounded-md w-36 text-black z-100">
+            <div className="flex items-center px-2 py-2 hover:bg-gray-300 cursor-pointer text-orange-600 text-base ">
               <img src="/icons/flag-vn.png" className="w-4 h-4 mr-2" />
               Tiếng Việt
             </div>
-            <div className="flex items-center px-2 py-1 hover:bg-gray-300 cursor-pointer">
+            <div className="flex items-center px-2 py-2 hover:bg-gray-300 cursor-pointer text-orange-600 text-base ">
               <img src="/icons/flag-tw.png" className="w-4 h-4 mr-2" />
               漢語
             </div>
-            <div className="flex items-center px-2 py-1 hover:bg-gray-300 cursor-pointer">
+            <div className="flex items-center px-2 py-2 hover:bg-gray-300 cursor-pointer text-orange-600 text-base ">
               <img src="/icons/flag-jp.png" className="w-4 h-4 mr-2" />
               日本語
             </div>
@@ -70,10 +70,10 @@ export default function TopBar() {
       <div className="flex items-center space-x-2 text-white">
         <span>Follow us on:</span>
         <a href="#">
-          <img src="/icons/facebook.png" className="w-5 h-5" />
+          <img src="/icons/facebook.png" className="w-4 h-4" />
         </a>
         <a href="#">
-          <img src="/icons/instagram.png" className="w-5 h-5" />
+          <img src="/icons/instagram.png" className="w-4 h-4" />
         </a>
       </div>
     </div>

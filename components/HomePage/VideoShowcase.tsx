@@ -79,11 +79,11 @@ export default function VideoShowcase() {
         <div className="absolute inset-0 bg-blue-500/50"></div>
 
         {/* Content phải có relative + z-index để nổi lên trên lớp mờ */}
-        <div className="relative z-10 flex-grow-[4] flex flex-col justify-center">
-          <h2 className="text-7xl font-semibold text-white">
+        <div className="relative z-10 flex-grow-[5] flex flex-col justify-center">
+          <h2 className="text-6xl font-semibold text-white">
             {videos[index].title}
           </h2>
-          <p className="text-3xl font-thin mt-6 text-gray-100">
+          <p className="text-xl font-thin mt-6 text-gray-100">
             {videos[index].subtitle}
           </p>
         </div>

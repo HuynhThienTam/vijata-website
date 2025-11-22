@@ -32,7 +32,7 @@ const compliments = [
 
 export default function Complements() {
   return (
-    <section className="w-[90%] mx-auto py-12 relative  ">
+    <section className="w-[90%] mx-auto py-10 relative  ">
       {/* Background PNG cho toàn bộ grid */}
       <div
         className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 
@@ -59,10 +59,10 @@ export default function Complements() {
             />
 
             {/* Text Content */}
-            <h3 className="text-2xl font-semibold text-gray-900 leading-tight">
+            <h3 className="text-xl font-semibold text-gray-900 leading-tight">
               {c.title}
             </h3>
-            <p className="mt-3 text-gray-600 text-lg max-w-[75%]">{c.text}</p>
+            <p className="mt-3 text-gray-600 text-sm max-w-[75%]">{c.text}</p>
 
             {/* <span className="mt-auto block bg-amber-200" /> */}
           </article>

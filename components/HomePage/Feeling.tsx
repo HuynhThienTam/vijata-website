@@ -1,10 +1,10 @@
 export default function Feeling() {
   return (
-    <section className="w-[90%] mx-auto py-12 flex items-start gap-6">
+    <section className="w-[90%] mx-auto py-8 flex items-start gap-6 text-gray-700">
       {/* Left Image - 3/10 width */}
       <article>
         <div className="mr-10 mb-6 float-left w-3/10 group">
-          <div className="rounded-md border-[10px] border-blue-600 overflow-hidden  ">
+          <div className="rounded-md border-[8px] border-blue-600 overflow-hidden  ">
           <img
             src="/images/students1.jpg"
             alt="Feeling"
@@ -12,7 +12,7 @@ export default function Feeling() {
           />
         </div>
         </div>
-        <p className="text-xl indent-8 pl-3">
+        <p className="text-base indent-8 pl-3 ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel
           ligula scelerisque, finibus odio eget, facilisis massa. Suspendisse
           potenti. Vestibulum ac diam sit amet quam vehicula elementum sed sit
@@ -22,7 +22,7 @@ export default function Feeling() {
           feugiat.
         </p>
         <br />
-        <p className="text-xl indent-8 pl-3">
+        <p className="text-base indent-8 pl-3">
           Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero
           malesuada feugiat. Lorem ipsum dolor sit amet consectetur adipisicing
           elit. Officia dicta in vitae ea. Culpa, possimus voluptate libero
@@ -48,7 +48,7 @@ export default function Feeling() {
           recusandae rem illum aspernatur natus, hic minus neque. Mollitia!
         </p>
         <br />
-        <p className="text-xl indent-8 pl-3">
+        <p className="text-base indent-8 pl-3">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
           commodi aperiam earum natus, sint in hic id! Doloribus ex vitae
           consectetur quos, quaerat praesentium doloremque fuga recusandae

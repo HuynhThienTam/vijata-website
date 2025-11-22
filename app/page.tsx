@@ -7,7 +7,7 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-white ">
       <VideoShowcase />
       <LetsMeet/>
       <Complements/>
