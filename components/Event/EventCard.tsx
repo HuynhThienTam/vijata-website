@@ -16,7 +16,7 @@ export function EventCard({ news }: { news: any }) {
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <span className="absolute top-3 left-3 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
+        <span className="absolute top-3 left-3 bg-pink-500 text-white opacity-80 text-[12px] px-3 py-1 rounded-xs">
           {news.category}
         </span>
       </div>

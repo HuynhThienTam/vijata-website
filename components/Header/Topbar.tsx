@@ -33,7 +33,7 @@ export default function TopBar() {
   return (
     <div
       id="topbar"
-      className="w-full bg-blue-600 py-0 px-[3%] flex justify-between items-center text-[12px]"
+      className="w-full bg-blue-600 py-0.5 px-[3%] flex justify-between items-center text-[14px]"
     >
       {/* Language Selector */}
       <div
@@ -49,7 +49,7 @@ export default function TopBar() {
         </div>
 
         {open && (
-          <div className="absolute left-0 mt-0 bg-white shadow-md rounded-md w-36 text-black z-100">
+          <div className="absolute left-0 mt-0.5 bg-white shadow-md rounded-md w-36 text-black z-100">
             <div className="flex items-center px-2 py-2 hover:bg-gray-300 cursor-pointer text-orange-600 text-base ">
               <img src="/icons/flag-vn.png" className="w-4 h-4 mr-2" />
               Tiếng Việt

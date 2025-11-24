@@ -51,10 +51,10 @@ export default function Navbar() {
               <li key={item.href} className="relative group">
                 <Link
                   href={item.href}
-                  className={`text-base font-bold transition ${
+                  className={`text-base font-semibold transition ${
                     isActive
                       ? "text-orange-400"
-                      // : "text-blue-600 group-hover:text-orange-400"
+                      // : "text-blue-600 group-hover:text-red-400"
                       : "text-blue-600 "
                   }`}
                 >
@@ -62,10 +62,10 @@ export default function Navbar() {
                 </Link>
 
                 {/* Top hover indicator */}
-                <span
-                  className={`pointer-events-none absolute -top-2 left-0 right-0 h-[2px] bg-orange-400 
+                {/* <span
+                  className={`pointer-events-none absolute -top-2 left-0 right-0 h-[2px] bg-green-400 
     scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center`}
-                />
+                /> */}
 
                 {/* Bottom hover indicator */}
                 <span

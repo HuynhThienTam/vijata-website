@@ -1,11 +1,12 @@
 "use client";
+import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRef, useState } from "react";
 import { EventCard } from "./EventCard";
 import Slider from "react-slick";
 
-export default function EventCarousel() {
+export default function EventPageBanner() {
   // const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<Slider>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,56 +14,23 @@ export default function EventCarousel() {
     {
       id: 1,
       title: "Vijata opens new center in Ho Chi Minh City",
-      category: "Education",
-      date: "Oct 24, 2025",
-      image: "/posters/art-poster.png",
-      slug: "vijata-opens-hcmc-center",
+      image: "/images/phuong-banner.jpg",
     },
     {
       id: 2,
       title: "Vijata wins national teaching award",
-      category: "Achievement",
-      date: "Sep 12, 2025",
-      image: "/posters/community-poster.png",
-      slug: "vijata-national-award",
+      image: "/images/viethoa-banner.jpg",
     },
     {
       id: 3,
       title: "New collaboration with Japanese universities",
-      category: "Partnership",
-      date: "Aug 20, 2025",
-      image: "/posters/concert-poster.png",
-      slug: "vijata-japan-collab",
-    },
-    {
-      id: 4,
-      title: "Vijata language camp 2025 launched",
-      category: "Event",
-      date: "Jul 05, 2025",
-      image: "/posters/gray-poster.png",
-      slug: "vijata-camp-2025",
-    },
-    {
-      id: 5,
-      title: "Scholarship program for students announced",
-      category: "Scholarship",
-      date: "Jun 18, 2025",
-      image: "/posters/kindness-poster.png",
-      slug: "vijata-scholarship",
-    },
-    {
-      id: 6,
-      title: "No more games",
-      category: "Scholarship",
-      date: "Jun 7, 2025",
-      image: "/posters/red-poster.png",
-      slug: "vijata-scholarship",
+      image: "/images/writing-banner.png",
     },
   ];
   const handlePrev = () => {
     if (!sliderRef.current) return;
 
-    const slidesToShow = 3; // nhớ sync với settings.slidesToShow
+    const slidesToShow = 1; // nhớ sync với settings.slidesToShow
     const lastIndex = newsData.length - slidesToShow;
 
     if (currentSlide == 0) {
@@ -74,7 +42,7 @@ export default function EventCarousel() {
   const handleNext = () => {
     if (!sliderRef.current) return;
 
-    const slidesToShow = 3; // nhớ sync với settings.slidesToShow
+    const slidesToShow = 1; // nhớ sync với settings.slidesToShow
     const lastIndex = newsData.length - slidesToShow;
 
     if (currentSlide >= lastIndex) {
@@ -89,7 +57,7 @@ export default function EventCarousel() {
   function PrevArrow() {
     return (
       <button
-        className="absolute -top-16 right-16   h-7 w-7 flex items-center justify-center text-gray-600  text-base font-semibold bg-white rounded-full hover:bg-red-600 hover:text-white transition-all duration-500 cursor-pointer"
+        className="absolute top-1/2 -translate-y-1/2 z-1 left-4 h-11 w-11 flex items-center justify-center leading-none text-gray-600  text-base font-semibold bg-white rounded-full hover:bg-red-600 hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-500 cursor-pointer"
         // shadow-sm shadow-gray-400/50
         onClick={handlePrev}
         type="button"
@@ -98,7 +66,6 @@ export default function EventCarousel() {
         }}
       >
         <span className="pb-[2px] leading-none">‹</span>
-        
       </button>
     );
   }
@@ -108,7 +75,7 @@ export default function EventCarousel() {
   function NextArrow() {
     return (
       <button
-        className="absolute -top-16 right-7  h-7 w-7 flex items-center justify-center text-gray-600 text-base font-semibold bg-white rounded-full hover:bg-red-600 hover:text-white transition-all duration-500 cursor-pointer"
+        className="absolute top-1/2 -translate-y-1/2 right-4 h-11 w-11 flex  items-center justify-center leading-none text-gray-600 text-base font-semibold bg-white rounded-full hover:bg-red-600 hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-500 cursor-pointer"
         // shadow-sm shadow-gray-400/50
         // onClick={onClick}
         onClick={handleNext}
@@ -126,7 +93,7 @@ export default function EventCarousel() {
     dots: false,
     infinite: false,
     speed: 600,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
@@ -134,12 +101,13 @@ export default function EventCarousel() {
     arrows: true,
     draggable: true,
     swipeToSlide: true, // 🔥 kéo ít cũng auto next
-    touchThreshold: 15,
+    touchThreshold: 25,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     // prevArrow:<PrevArrow onClick={() => sliderRef.current?.slickPrev()} />,
     // prevArrow: <PrevArrow />,
-    beforeChange: (oldIndex: number, newIndex: number) => setCurrentSlide(newIndex),
+    beforeChange: (oldIndex: number, newIndex: number) =>
+      setCurrentSlide(newIndex),
     afterChange: (current: number) => {
       const lastIndex = newsData.length - settings.slidesToShow;
       if (current >= lastIndex) {
@@ -149,39 +117,20 @@ export default function EventCarousel() {
         }, 4000);
       }
     },
-    // beforeChange: (oldIndex: number, newIndex: number) => {
-    //   const lastIndex = newsData.length - settings.slidesToShow;
-    //   if (newIndex > lastIndex) {
-    //     sliderRef.current?.slickGoTo(0);
-    //     setCurrentSlide(0);
-    //   } else {
-    //     setCurrentSlide(newIndex);
-    //   }
-    // },
-    
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1 },
-      },
-    ],
   };
   return (
-    <section className="relative w-[90%] mx-auto py-9 ">
-      <h2 className="text-2xl text-gray-800 font-semibold  text-left pl-7">
-        OUR EVENTS
-      </h2>
-
-      <div className="slider-container  events-slider pt-24  ">
+    <section className="relative w-[80%] mx-auto pt-2 pb-7">
+      <div className="slider-container  banner-slider relative group ">
         <Slider ref={sliderRef} {...settings}>
           {newsData.map((news) => (
-            <div key={news.id} className="event-slide-item">
-              <EventCard news={news} />
+            <div key={news.id}  className="banner-slide-item relative aspect-[4/1] w-full">
+              <Image
+                src={news.image}
+                alt={news.title}
+                fill
+                className="object-cover object-[center_60%] "
+              />
+               <div className="absolute inset-0 bg-blue-800/5 pointer-events-none"></div>
             </div>
           ))}
         </Slider>

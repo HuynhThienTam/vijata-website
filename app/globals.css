@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-nearWhite: #fffff2;
   --color-brandColor: #00425f;
   --color-blueColor: #0000ff;
   --color-deepBlueColor: #003366;
@@ -42,12 +43,63 @@ body {
   font-size: 28px !important;
   opacity: 1 !important;
 }
-.slick-slide > div {
+
+/* ===== Slider có padding ngang 10% cho nội dung (events) ===== */
+.events-slider .slick-slide > div {
+  /* wrapper do slick tạo sẽ nhận padding ngang */
+  padding: 0 10%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100% !important;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  box-sizing: border-box;
+}
+
+/* Nếu bạn muốn inner .event-slide-item không bị ảnh hưởng */
+.events-slider .slick-slide > div > .event-slide-item {
+  width: 100%;
+  /* bỏ việc ép justify-content ở inner nếu cần */
+}
+
+/* ===== Banner slider: reset wrapper để ảnh full width ===== */
+.banner-slider .slick-slide > div {
+  padding: 0 !important;
+  display: block !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Đảm bảo .banner-slide-item vẫn fill */
+.banner-slider .slick-slide > div > .banner-slide-item {
+  width: 100%;
+}
+
+/* .event-slide-item .slick-slide > div {
   padding: 0 10%;
   display: flex;
   justify-content: flex-end;
   width: 100% !important;
   padding-top: 8px;   /* hoặc 1rem */
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
 
-}
+/* } */
+/* .banner-slide-item .slick-slide > div {
+  padding: 0 !important;
+  display: block !important;
+  margin: 0 !important;
+  width: 100% !important;
+
+} */ 
+
+
+/* .slick-slide .banner-slide-item { */
+  /* padding: 0;} */
+  /* display: flex;
+  justify-content: flex-end;
+  width: 100% !important;
+  padding-top: 8px;   /* hoặc 1rem */
+  /* padding-bottom: 8px; */ 
+
+
