@@ -2,6 +2,8 @@ import BriefInfo from '@/components/About/BriefInfo';
 import MottoAndFigures from '@/components/About/MottoAndFigures';
 import NotableActivities from '@/components/About/NotableActivities';
 import Timeline from '@/components/About/Timeline';
+import CoursesIntro from '@/components/ProductsPage/CoursesIntro';
+import ProductsShowing from '@/components/ProductsPage/ProductsShowing';
 import React from 'react'
 
 const About = () => {

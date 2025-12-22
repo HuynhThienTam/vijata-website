@@ -6,6 +6,10 @@ import TopBar from "@/components/Header/Topbar";
 import Footer from "@/components/Footer/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import { UserProvider } from "@/components/Context/useAuth";
+import Providers from "@/components/Context/Provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,16 +31,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
-        <TopBar/>
-        <Header/>
-        {children}
-        <Footer/>
+        <Providers>
+          <TopBar />
+          <Header />
+          {children}
+          <Footer />
+          
+        </Providers>
       </body>
     </html>
   );

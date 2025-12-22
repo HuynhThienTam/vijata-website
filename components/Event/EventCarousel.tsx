@@ -180,7 +180,7 @@ export default function EventCarousel() {
       <div className="slider-container  events-slider pt-24  ">
         <Slider ref={sliderRef} {...settings}>
           {newsData.map((news) => (
-            <div key={news.id} className="event-slide-item">
+            <div key={news.id} className="event-slide-item w-full">
               <EventCard news={news} />
             </div>
           ))}

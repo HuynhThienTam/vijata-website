@@ -10,6 +10,8 @@
 // }
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { useAuth } from "../Context/useAuth";
+import Link from "next/link";
 
 export default function TopBar() {
   const [open, setOpen] = useState(false);
@@ -29,7 +31,7 @@ export default function TopBar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
+  const { isLoggedIn, user, logout } = useAuth();
   return (
     <div
       id="topbar"
@@ -45,7 +47,7 @@ export default function TopBar() {
           onClick={() => setOpen((prev) => !prev)}
         >
           <span>English</span>
-          <span  className="text-[8px]">▼</span>
+          <span className="text-[8px]">▼</span>
         </div>
 
         {open && (
@@ -65,17 +67,25 @@ export default function TopBar() {
           </div>
         )}
       </div>
-
-      {/* Social Media Section */}
-      <div className="flex items-center space-x-2 text-white">
-        <span>Follow us on:</span>
-        <a href="#">
-          <img src="/icons/facebook.png" className="w-4 h-4" />
-        </a>
-        <a href="#">
-          <img src="/icons/instagram.png" className="w-4 h-4" />
-        </a>
-      </div>
+      {isLoggedIn() ? (
+        <div className="flex items-center space-x-6 text-white">
+          <div className="text-white">Welcome, {user?.userName}</div>
+          <Link href="/" onClick={logout} className="text-white hover:text-gray-200">
+            Log out
+          </Link>
+        </div>
+      ) : (
+        // {/* Social Media Section */}
+        <div className="flex items-center space-x-2 text-white">
+          <span>Follow us on:</span>
+          <a href="#">
+            <img src="/icons/facebook.png" className="w-4 h-4" />
+          </a>
+          <a href="#">
+            <img src="/icons/instagram.png" className="w-4 h-4" />
+          </a>
+        </div>
+      )}
     </div>
   );
 }

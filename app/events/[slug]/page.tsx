@@ -1,12 +1,57 @@
-import NewsDetailPage from '@/components/NewsPage/NewsDetailPage'
-import React from 'react'
+// import NewsDetailPage from "@/components/NewsPage/NewsDetailPage";
 
-const page = () => {
+// export default async function Page({
+//   params,
+// }: {
+//   params: { slug: string };
+// }) {
+//   return (
+//     <div className="bg-white">
+//       <NewsDetailPage eventId={params.slug} />
+//     </div>
+//   );
+// }
+import NewsDetailPage from "@/components/NewsPage/NewsDetailPage";
+
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function Page({ params }: PageProps) {
+  const { slug } = params; // ✅ OK
+
   return (
-    <div className='bg-white'>
-        <NewsDetailPage/>
+    <div className="bg-white">
+      <NewsDetailPage eventId={slug} />
     </div>
-  )
+  );
 }
+// import NewsDetailPage from "@/components/NewsPage/NewsDetailPage";
 
-export default page
+// export default function Page({
+//   params,
+// }: {
+//   params: { slug: string };
+// }) {
+//   return (
+//     <div className="bg-white">
+//       <NewsDetailPage eventId={params.slug} />
+//     </div>
+//   );
+// }
+
+// import NewsDetailPage from '@/components/NewsPage/NewsDetailPage';
+
+// export default async function Page({
+//   params,
+// }: {
+//   params: { slug: string };
+// }) {
+//   return (
+//     <div className="bg-white">
+//       <NewsDetailPage eventId={params.slug} />
+//     </div>
+//   );
+// }

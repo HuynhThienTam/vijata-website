@@ -93,7 +93,7 @@ export default function ContactUs() {
         <h3 className="text-sm font-light text-gray-500 mb-1">
           You need to get support? We'd love to hear from you!
         </h3>
-        <h2 className="text-2xl font-bold mb-6 text-gray-600">Contact us!</h2>
+        <h2 className="text-2xl font-bold mb-6 text-blue-600">Contact us!</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
@@ -111,10 +111,10 @@ export default function ContactUs() {
                   }
                   value={formData[field as keyof typeof formData]}
                   onChange={handleChange}
-                  className={`w-full border rounded px-3 py-2 focus:outline-orange-400 text-black placeholder-gray-400 ${
+                  className={`w-full border rounded px-3 py-2 focus:outline-blue-600 text-black placeholder-gray-400 ${
                     errors[field as keyof typeof errors]
                       ? "border-red-500"
-                      : "border-gray-700"
+                      : "border-gray-500"
                   }`}
                 />
                 {errors[field as keyof typeof errors] && (
@@ -133,7 +133,7 @@ export default function ContactUs() {
               value={formData.message}
               onChange={handleChange}
               rows={5}
-              className={`w-full border rounded px-3 py-2 focus:outline-orange-400 text-black placeholder-gray-400 ${
+              className={`w-full border rounded px-3 py-2 focus:outline-blue-600 text-black placeholder-gray-400 ${
                 errors.message ? "border-red-500" : "border-gray-500"
               }`}
             />

@@ -1,16 +1,16 @@
 export default function CoursesIntro() {
   return (
-    <div className="w-[80%] flex flex-col items-start justify-start text-start mx-auto pt-6 leading-relaxed">
-        <h1 className="text-5xl text-gray-700 font-extrabold text-start leading-tight">
+    <div className="w-[90%] flex flex-col items-center justify-start text-start mx-auto pt-6 leading-relaxed">
+        <h1 className="text-4xl text-blue-600 font-extrabold text-start leading-tight">
           Choose Vijita Academy
       </h1>
-      <p className=" pt-6 text-base text-gray-700">
+      <p className="w-[75%] indent-8 pt-6 text-base text-gray-700">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium,
         perspiciatis! Voluptatibus, dolorum. A consectetur debitis provident
         neque eveniet praesentium, laudantium labore earum laborum sed
         distinctio harum repellendus. Tempore, aliquam id dad fes affeaf!
       </p>
-    <div className="w-full mx-auto py-8 flex items-start  text-gray-700">
+    <div className="w-[75%] mx-auto py-8 flex items-start  text-gray-700">
       <article className="w-full mx-auto">
         {/* <div className="mr-10 mb-6 float-right w-3/10 group">
           <div className="rounded-md border-[8px] border-blue-600 overflow-hidden  ">
