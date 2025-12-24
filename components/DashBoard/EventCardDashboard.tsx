@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+import { FaPen } from "react-icons/fa";
 export function EventCardDashBoard({ news }: { news: any }) {
   // const [imgSrc, setImgSrc] = useState(
   //   news.coverPhoto && news.coverPhoto.trim() !== ""
@@ -16,12 +16,11 @@ export function EventCardDashBoard({ news }: { news: any }) {
   //   ? news.coverPhoto
   //   : "/images/display1.jpg";
   //   console.log("coverPhoto:", news.coverPhoto);
-const imageSrc =
-  news.coverPhoto &&
-  (news.coverPhoto.startsWith("/") ||
-    news.coverPhoto.startsWith("http"))
-    ? news.coverPhoto
-    : "/images/default-image.png";
+  const imageSrc =
+    news.coverPhoto &&
+    (news.coverPhoto.startsWith("/") || news.coverPhoto.startsWith("http"))
+      ? news.coverPhoto
+      : "/images/default-image.png";
   return (
     <div
       className="w-full  md:max-lg:w-[160px]  rounded-md overflow-hidden"
@@ -49,10 +48,18 @@ const imageSrc =
             {news.title}
           </h3>
         </Link>
-        <div className=" mt-4 mb-3 rounded-sm inline-block bg-red-600 inset-shadow-sm inset-shadow-red-700/50  ">
-          <p className="px-[6px] pt-[4px] pb-[6px] text-xs text-white ">
-            {new Date(news.createdOn).toLocaleDateString("vi-VN")}
-          </p>
+        <div className="flex justify-between gap-3">
+          <div className=" mt-4 mb-3 rounded-sm inline-block bg-red-600 inset-shadow-sm inset-shadow-red-700/50  ">
+            <p className="px-[6px] pt-[4px] pb-[6px] text-xs text-white ">
+              {new Date(news.createdOn).toLocaleDateString("vi-VN")}
+            </p>
+          </div>
+          <Link
+          href={`/admin/dashboardadmin/editevent/${news.id}`}
+          >
+          <FaPen className="w-4 h-4 mt-4 text-pink-500 hover:text-pink-700" />
+          </Link>
+          
         </div>
       </div>
     </div>

@@ -19,3 +19,11 @@ export interface EventCreate {
   startOn: string;
   finishOn: string;
 };
+
+export interface EventUpdate {
+  title: string;
+  content: string;
+  coverPhoto: string; 
+  startOn: string;
+  finishOn: string;
+};

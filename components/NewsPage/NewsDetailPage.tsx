@@ -84,7 +84,7 @@ export default function NewsDetailPage({eventId}: {eventId: string}) {
     }).catch(err => {
       console.error("API error:", err);
     });
-  }, [eventId]);
+  }, [eventIdNumber]);
   if (!event) return <p>Loading...</p>;
   const imageSrc =
   event.coverPhoto &&

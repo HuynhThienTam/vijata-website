@@ -1,6 +1,6 @@
 import axios from "axios";
 import { handleError } from "../Helpers/ErrorHandler";
-import { EventContentBlockCreate } from "../Models/EventContentBlock";
+import { EventContentBlockCreate, EventContentBlockGet } from "../Models/EventContentBlock";
 
 const api = "http://localhost:5210/api/eventcontentblock/";
 
@@ -25,5 +25,40 @@ export const EventContentBlockPostAPI = async (
     return data;
   } catch (error) {
     handleError(error);
+  }
+};
+
+export const EventContentBlockUpdateAPI = async (
+  id: number,
+    type: string,
+    level?: number | null,
+    content?: string | null,
+    src?: string | null,
+    alt?: string | null,
+    href?: string | null,
+  
+) => {
+  try {
+    const res = await axios.put<EventContentBlockGet>(
+      `${api}${id}`,
+      { type, level, content, src, alt, href }
+    );
+    return res;
+  } catch (error: any) {
+    console.error("Update block error:", error.response?.data);
+    throw error;
+  }
+};
+
+/* =======================
+   DELETE BLOCK
+======================= */
+export const EventContentBlockDeleteAPI = async (id: number) => {
+  try {
+    const res = await axios.delete(`${api}${id}`);
+    return res;
+  } catch (error: any) {
+    console.error("Delete block error:", error.response?.data);
+    throw error;
   }
 };

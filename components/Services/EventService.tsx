@@ -15,7 +15,7 @@ export const EventGetByPageAPI = async (pageNumber: number, pageSize: number) =>
 export const EventGetByIdAPI = async (id: number) => {
   console.log("🔍 Fetching event with ID:", `${api}${id}`);
   try {
-    const res = await axios.get(`${api}${id}`);
+    const res = await axios.get<EventGet>(`${api}${id}`);
     return res;
   } catch (error: any) {
     console.error("❌ Get event by id failed:", {
@@ -82,3 +82,27 @@ export const EventPostAPI = async (
 //     handleError(error);
 //   }
 // };
+export const EventUpdateAPI = async (
+  id: number,
+    title: string,
+    content: string,
+    coverPhoto: string,
+    startOn: string,
+    finishOn: string,
+  
+) => {
+  return await axios.put(`${api}${id}`, {
+    title: title,
+    content: content,
+    coverPhoto: coverPhoto,
+    startOn: startOn,
+    finishOn: finishOn,
+  });
+};
+
+/* =======================
+   DELETE
+======================= */
+export const EventDeleteAPI = async (id: number) => {
+  return await axios.delete(`${api}${id}`);
+};
