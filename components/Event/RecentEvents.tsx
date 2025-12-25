@@ -1,39 +1,43 @@
+"use client";
+import { useEffect, useState } from "react";
 import { FaCalendar } from "react-icons/fa6";
+import { EventGetByPageAPI } from "../Services/EventService";
+import Link from "next/link";
 
 
 export default function RecentEvents() {
   // events: [{ id, date: "...", title, timeRange }]
-  const events = [
-  {
-    id: 1,
-    date: "2025-01-05",
-    title: "Grand Opening Ceremony of the Innovation Hub",
-    timeRange: "January 5 at 9:00 AM – January 5 at 12:00 PM",
-  },
-  {
-    id: 2,
-    date: "2025-01-12",
-    title: "Tech for Good: Charity Coding Marathon",
-    timeRange: "January 12 at 8:00 AM – January 12 at 6:00 PM",
-  },
-  {
-    id: 3,
-    date: "2025-01-20",
-    title: "Global AI Conference 2025",
-    timeRange: "January 20 at 9:00 AM – January 22 at 5:00 PM",
-  },
-  {
-    id: 4,
-    date: "2025-02-03",
-    title: "Creative Design Workshop: Building Brand Identity",
-    timeRange: "February 3 at 1:00 PM – February 3 at 4:00 PM",
-  },
-  {
-    id: 5,
-    date: "2025-02-14",
-    title: "Valentine Community Gathering Event",
-    timeRange: "February 14 at 6:00 PM – February 14 at 9:00 PM",
-  },
+  // const events = [
+  // {
+  //   id: 1,
+  //   date: "2025-01-05",
+  //   title: "Grand Opening Ceremony of the Innovation Hub",
+  //   timeRange: "January 5 at 9:00 AM – January 5 at 12:00 PM",
+  // },
+  // {
+  //   id: 2,
+  //   date: "2025-01-12",
+  //   title: "Tech for Good: Charity Coding Marathon",
+  //   timeRange: "January 12 at 8:00 AM – January 12 at 6:00 PM",
+  // },
+  // {
+  //   id: 3,
+  //   date: "2025-01-20",
+  //   title: "Global AI Conference 2025",
+  //   timeRange: "January 20 at 9:00 AM – January 22 at 5:00 PM",
+  // },
+  // {
+  //   id: 4,
+  //   date: "2025-02-03",
+  //   title: "Creative Design Workshop: Building Brand Identity",
+  //   timeRange: "February 3 at 1:00 PM – February 3 at 4:00 PM",
+  // },
+  // {
+  //   id: 5,
+  //   date: "2025-02-14",
+  //   title: "Valentine Community Gathering Event",
+  //   timeRange: "February 14 at 6:00 PM – February 14 at 9:00 PM",
+  // },
 //   {
 //     id: 6,
 //     date: "2025-02-28",
@@ -52,15 +56,27 @@ export default function RecentEvents() {
 //     title: "Future Leaders Workshop",
 //     timeRange: "March 25 at 10:00 AM – March 25 at 1:00 PM",
 //   },
-];
+// ];
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    const month = date.toLocaleString("en-US", { month: "short" }); // Jan, Feb
+    const month = date.toLocaleString("vi-VN", { month: "short" }); // Jan, Feb
     const day = date.getDate();
     return { month, day };
   };
-
+  const [events, setEvents] = useState<any[]>([]);
+    const pageSize = 5;
+    const pageNumber = 1;
+     useEffect(() => {
+        fetchEvents();
+      }, [pageNumber]);
+    
+      const fetchEvents = async () => {
+        const res = await EventGetByPageAPI(pageNumber, pageSize);
+        if (res?.data) {
+          setEvents(res.data);
+        }
+      };
   return (
     <div className="flex flex-col w-full gap-4 pl-3 pt-9">
       {/* Title */}
@@ -69,7 +85,7 @@ export default function RecentEvents() {
       {/* Events */}
       <div className="flex flex-col gap-4">
         {events.map((ev) => {
-          const { month, day } = formatDate(ev.date);
+          const { month, day } = formatDate(ev.startOn);
 
           return (
             <div
@@ -89,16 +105,16 @@ export default function RecentEvents() {
                 {/* Time range */}
                 <div className="flex items-end text-xs text-gray-600 mb-1">
                   <FaCalendar className="w-3 h-3 text-blue-600 mr-1 mb-0.5" />
-                  <p className="">{ev.timeRange}</p>
+                  <p className="">{ev.startOn}-{ev.finishOn}</p>
                 </div>
 
                 {/* Title */}
-                <a
-                  href="#"
+                <Link
+                  href={`/events/${ev.id}`}
                   className="font-semibold leading-7 text-gray-900 hover:underline decoration-1 underline-offset-6  text-xl"
                 >
                   {ev.title}
-                </a>
+                </Link>
               </div>
             </div>
           );

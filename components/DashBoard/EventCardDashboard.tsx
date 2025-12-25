@@ -2,8 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaPen } from "react-icons/fa";
-export function EventCardDashBoard({ news }: { news: any }) {
+import { FaPen, FaTrashAlt } from "react-icons/fa";
+import { confirmDeleteToast } from "../ToastCustom/ConfirmDeleteToast";
+type Props = {
+  news: any;
+  onRemoveEvent: () => Promise<void>;
+};
+export function EventCardDashBoard({ news, onRemoveEvent }: Props) {
   // const [imgSrc, setImgSrc] = useState(
   //   news.coverPhoto && news.coverPhoto.trim() !== ""
   //     ? news.coverPhoto
@@ -54,11 +59,25 @@ export function EventCardDashBoard({ news }: { news: any }) {
               {new Date(news.createdOn).toLocaleDateString("vi-VN")}
             </p>
           </div>
-          <Link
+          <div className="flex">
+            <Link className="w-4 h-4 mt-4"
           href={`/admin/dashboardadmin/editevent/${news.id}`}
           >
-          <FaPen className="w-4 h-4 mt-4 text-pink-500 hover:text-pink-700" />
+          <FaPen className=" text-pink-500 hover:text-pink-700" />
+
           </Link>
+          <FaTrashAlt 
+            onClick={() =>
+                            confirmDeleteToast(
+                              "Are you sure you want to delete this event?",
+                              async () => {
+                                await onRemoveEvent();
+                              }
+                            )
+                          }
+           className="ml-4 w-4 h-4 mt-4 text-pink-500 hover:text-pink-700" />
+          </div>
+
           
         </div>
       </div>

@@ -1,7 +1,8 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
-import { EventGetByPageAPI } from "../Services/EventService";
+import { EventDeleteAPI, EventGetByPageAPI } from "../Services/EventService";
 import { EventCardDashBoard } from "./EventCardDashboard";
+import { toast } from "react-toastify";
 
 export default function EventsManagementCarousel() {
   const [events, setEvents] = useState<any[]>([]);
@@ -31,14 +32,26 @@ export default function EventsManagementCarousel() {
       setPageNumber((prev) => prev - 1);
     }
   };
-
+  const removeEvent = async (index: number) => {
+      const event = events[index];
+        try {
+          await EventDeleteAPI(event.id);
+          toast.success("Event deleted");
+        } catch {
+          toast.error("Delete event failed");
+          return;
+        }
+      
+      // xoá khỏi state
+      setEvents((prev) => prev.filter((_, i) => i !== index));
+    };
   return (
     <div className=" w-[90%] mx-auto py-9">
       {/* Grid */}
         <div className=" grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-9 justify-items-center">
-          {events.map((item) => (
-            <div key={item.id} className="  w-full" >
-              <EventCardDashBoard  news={item} />
+          {events.map((item, index) => (
+            <div key={index} className="  w-full" >
+              <EventCardDashBoard  news={item} onRemoveEvent={() => removeEvent(index)} />
             </div>
             
           ))}

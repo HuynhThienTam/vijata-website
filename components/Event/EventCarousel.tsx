@@ -1,14 +1,16 @@
 "use client";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { EventCard } from "./EventCard";
 import Slider from "react-slick";
+import { EventGetByPageAPI } from "../Services/EventService";
 
 export default function EventCarousel() {
   // const containerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<Slider>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [newsDataLength, setNewsDataLength] = useState(0);
   const newsData = [
     {
       id: 1,
@@ -63,8 +65,8 @@ export default function EventCarousel() {
     if (!sliderRef.current) return;
 
     const slidesToShow = 3; // nhớ sync với settings.slidesToShow
-    const lastIndex = newsData.length - slidesToShow;
-
+    // const lastIndex = newsData.length - slidesToShow;
+    const lastIndex = newsDataLength - slidesToShow;
     if (currentSlide == 0) {
       sliderRef.current.slickGoTo(lastIndex);
     } else {
@@ -75,7 +77,7 @@ export default function EventCarousel() {
     if (!sliderRef.current) return;
 
     const slidesToShow = 3; // nhớ sync với settings.slidesToShow
-    const lastIndex = newsData.length - slidesToShow;
+    const lastIndex = newsDataLength  - slidesToShow;
 
     if (currentSlide >= lastIndex) {
       // nếu đang ở cuối → nhảy thẳng về đầu
@@ -141,7 +143,7 @@ export default function EventCarousel() {
     // prevArrow: <PrevArrow />,
     beforeChange: (oldIndex: number, newIndex: number) => setCurrentSlide(newIndex),
     afterChange: (current: number) => {
-      const lastIndex = newsData.length - settings.slidesToShow;
+      const lastIndex = newsDataLength - settings.slidesToShow;
       if (current >= lastIndex) {
         setTimeout(() => {
           sliderRef.current?.slickGoTo(0);
@@ -171,6 +173,20 @@ export default function EventCarousel() {
       },
     ],
   };
+  const [events, setEvents] = useState<any[]>([]);
+  const pageSize = 12;
+  const pageNumber = 1;
+   useEffect(() => {
+      fetchEvents();
+    }, [pageNumber]);
+  
+    const fetchEvents = async () => {
+      const res = await EventGetByPageAPI(pageNumber, pageSize);
+      if (res?.data) {
+        setNewsDataLength(res.data.length);
+        setEvents(res.data);
+      }
+    };
   return (
     <section className="relative w-[90%] mx-auto py-9 ">
       <h2 className="text-2xl text-gray-800 font-semibold  text-left pl-7">
@@ -179,9 +195,9 @@ export default function EventCarousel() {
 
       <div className="slider-container  events-slider pt-24  ">
         <Slider ref={sliderRef} {...settings}>
-          {newsData.map((news) => (
-            <div key={news.id} className="event-slide-item w-full">
-              <EventCard news={news} />
+          {events.map((item, index) => (
+            <div key={item.id} className="event-slide-item w-full">
+              <EventCard news={item} />
             </div>
           ))}
         </Slider>

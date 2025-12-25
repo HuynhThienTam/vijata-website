@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const api = "http://localhost:5210/api/event/";
 export const EventGetByPageAPI = async (pageNumber: number, pageSize: number) => {
   try {
-    const data = await axios.get<EventGet[]>(api + `?PageNumber=${pageNumber}&PageSize=${pageSize}`);
+    const data = await axios.get<EventGet[]>(api + `?SortBy=CreatedOn&IsDescending=true&PageNumber=${pageNumber}&PageSize=${pageSize}`);
     return data;
   } catch (error) {
     handleError(error);

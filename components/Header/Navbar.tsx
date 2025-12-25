@@ -3,11 +3,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 const navItems = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about" },
-  { label: "PRODUCTs & SERVICEs", href: "/products" },
-  { label: "EVENTs", href: "/events" },
-  { label: "CONTACT", href: "/contact" },
+  // { label: "HOME", href: "/" },
+  // { label: "ABOUT US", href: "/about" },
+  // { label: "PRODUCTs & SERVICEs", href: "/products" },
+  // { label: "EVENTs", href: "/events" },
+  // { label: "CONTACT", href: "/contact" },
+  { label: "TRANG CHỦ", href: "/" },
+  { label: "GIỚI THIỆU", href: "/about" },
+  // { label: "PRODUCTs & SERVICEs", href: "/products" },
+  { label: "SỰ KIỆN", href: "/events" },
+  // { label: "CONTACT", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -17,7 +22,7 @@ export default function Navbar() {
     <nav className="w-full z-50 py-2">
       <div className="max-w-7xl mx-auto px-6 flex justify-center">
         {/* Menu */}
-        <ul className="flex space-x-14 relative">
+        <ul className="flex space-x-24 relative">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
 

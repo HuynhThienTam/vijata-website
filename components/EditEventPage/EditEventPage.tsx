@@ -191,12 +191,12 @@ export default function EditEventPage({ eventId }: { eventId: string }) {
 
         <div className="flex gap-4">
           <input
-            type="date"
+            type="datetime-local"
             className="border p-2 rounded w-full  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
             {...register("startOn")}
           />
           <input
-            type="date"
+            type="datetime-local"
             className="border p-2 rounded w-full  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
             {...register("finishOn")}
           />

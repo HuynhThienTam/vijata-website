@@ -46,15 +46,15 @@ export default function TopBar() {
           className="flex items-center space-x-1"
           onClick={() => setOpen((prev) => !prev)}
         >
-          <span>English</span>
+          <span>Tiếng Việt</span>
           <span className="text-[8px]">▼</span>
         </div>
 
         {open && (
           <div className="absolute left-0 mt-0.5 bg-white shadow-md rounded-md w-36 text-black z-100">
             <div className="flex items-center px-2 py-2 hover:bg-gray-300 cursor-pointer text-orange-600 text-base ">
-              <img src="/icons/flag-vn.png" className="w-4 h-4 mr-2" />
-              Tiếng Việt
+              <img src="/icons/flag-en.png" className="w-4 h-4 mr-2" />
+              English
             </div>
             <div className="flex items-center px-2 py-2 hover:bg-gray-300 cursor-pointer text-orange-600 text-base ">
               <img src="/icons/flag-tw.png" className="w-4 h-4 mr-2" />
@@ -77,7 +77,8 @@ export default function TopBar() {
       ) : (
         // {/* Social Media Section */}
         <div className="flex items-center space-x-2 text-white">
-          <span>Follow us on:</span>
+          {/* <span>Follow us on:</span> */}
+          <span>Theo dõi trên:</span>
           <a href="#">
             <img src="/icons/facebook.png" className="w-4 h-4" />
           </a>
