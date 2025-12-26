@@ -124,27 +124,27 @@ export default function AddEventPage() {
   ======================= */
   return (
     <div className="max-w-5xl mx-auto p-8">
-      <h1 className="text-2xl font-bold mb-6 text-blue-600">Add New Event</h1>
+      <h1 className="text-2xl font-bold mb-6 text-blue-600">Tạo sự kiện mới</h1>
 
       {/* ========= Event Info ========= */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 
         <input
-          placeholder="Event title"
+          placeholder="Tiêu đề sự kiện"
           className="w-full -600 p-2 rounded border border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
           {...register("title")}
         />
         {errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
 
         <textarea
-          placeholder="Short description"
+          placeholder="Mô tả ngắn"
           rows={4}
           className="w-full border p-2 rounded  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
           {...register("content")}
         />
 
         <input
-          placeholder="Cover photo URL"
+          placeholder="Ảnh bìa URL"
           className="w-full border p-2 rounded  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
           {...register("coverPhoto")}
         />
@@ -164,7 +164,7 @@ export default function AddEventPage() {
 
         {/* ========= Content Blocks ========= */}
         <div className="mt-8">
-          <h2 className="font-semibold mb-3 text-blue-600">Event Content</h2>
+          <h2 className="font-semibold mb-3 text-blue-600">Nội dung sự kiện</h2>
 
           {blocks.map((block, index) => (
             <div
@@ -179,10 +179,10 @@ export default function AddEventPage() {
                   }
                   className="border border-gray-600 text-gray-600 p-2 rounded"
                 >
-                  <option value="heading">Heading</option>
-                  <option value="text">Text</option>
-                  <option value="image">Image</option>
-                  <option value="quote">Quote</option>
+                  <option value="heading">Tiêu đề</option>
+                  <option value="text">Văn bản</option>
+                  <option value="image">Hình ảnh</option>
+                  <option value="quote">Trích dẫn</option>
                   <option value="link">Link</option>
                 </select>
 
@@ -191,14 +191,15 @@ export default function AddEventPage() {
                   onClick={() => removeBlock(index)}
                   className="text-red-500 hover:text-red-600 text-sm"
                 >
-                  Remove
+                  Xoá
                 </button>
               </div>
 
               {block.type === "heading" && (
                 <>
                   <input
-                    placeholder="Heading text"
+                  // heading text
+                    placeholder="Nội dung tiêu đề"
                     className="w-full border p-2 rounded mb-2  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
                     onChange={(e) =>
                       updateBlock(index, "content", e.target.value)
@@ -219,7 +220,7 @@ export default function AddEventPage() {
 
               {block.type === "text" && (
                 <textarea
-                  placeholder="Text content"
+                  placeholder="Nội dung văn bản"
                   rows={3}
                   className="w-full border p-2 rounded  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
                   onChange={(e) =>
@@ -231,14 +232,14 @@ export default function AddEventPage() {
               {block.type === "image" && (
                 <>
                   <input
-                    placeholder="Image URL"
+                    placeholder="Link ảnh URL"
                     className="w-full border p-2 rounded mb-2  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
                     onChange={(e) =>
                       updateBlock(index, "src", e.target.value)
                     }
                   />
                   <input
-                    placeholder="Alt text"
+                    placeholder="Tiêu đề/Văn bản thay thế ảnh"
                     className="w-full border p-2 rounded  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
                     onChange={(e) =>
                       updateBlock(index, "alt", e.target.value)
@@ -249,7 +250,7 @@ export default function AddEventPage() {
 
               {block.type === "quote" && (
                 <textarea
-                  placeholder="Quote"
+                  placeholder="Văn bản trích dẫn"
                   rows={2}
                   className="w-full border p-2 rounded  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
                   onChange={(e) =>
@@ -261,7 +262,7 @@ export default function AddEventPage() {
               {block.type === "link" && (
                 <>
                   <input
-                    placeholder="Link text"
+                    placeholder="Tên liên kết"
                     className="w-full border p-2 rounded mb-2  border-gray-500 focus:outline-blue-600 text-black placeholder-gray-400"
                     onChange={(e) =>
                       updateBlock(index, "content", e.target.value)
@@ -284,7 +285,7 @@ export default function AddEventPage() {
             onClick={addBlock}
             className="px-4 py-2 border rounded text-sm border-blue-600 text-blue-600 hover:border-blue-700 hover:text-blue-700 "
           >
-            + Add content block
+            + Thêm khối nội dung
           </button>
         </div>
 
@@ -292,7 +293,7 @@ export default function AddEventPage() {
           type="submit"
           className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded"
         >
-          Create Event
+          Tạo sự kiện
         </button>
       </form>
     </div>

@@ -19,33 +19,41 @@ export default function Footer() {
             alt="Logo"
             className="w-40 h-auto mb-3"
           />
-          <p className="text-sm font-semibold">VIJATA Academy</p>
+          <p className="text-sm font-semibold">Công ty TNHH Việt Nhật Đài</p>
         </div>
 
         {/* Middle Column: Contact Details */}
         <div className="w-1/4 flex flex-col gap-y-5">
-          <h3 className="text-base font-semibold mb-3">Our contact details:</h3>
+        {/* Our contact details */}
+          <h3 className="text-base font-semibold mb-3">Thông tin liên hệ:</h3>
           <div className="flex items-center gap-3">
             <GrLocation className="w-4 h-4 text-white"/>
              <p className="text-sm font-medium pl-2">123 Example Street, Hanoi</p>
           </div>
           <div className="flex items-center gap-3">
-            <LuClock className="w-4 h-4 text-white"/>
-             <p className="text-sm font-medium pl-2">Mon - Fri: 8AM - 6PM</p>
+            
+             <div className="flex">
+              <LuClock className="w-4 h-4 text-white"/>
+              <p className="text-sm font-medium pl-5">Thứ 2 -</p>
+              <div className="flex-col ">
+                <p className="text-sm font-medium ">Thứ 6: 8AM - 17PM</p>
+                <p className="text-sm font-medium ">Thứ 7: 8AM - 12AM</p>
+              </div>
+             </div>
           </div>
           <div className="flex items-center gap-3">
             <MdOutlineEmail className="w-4 h-4 text-white"/>
-            <p className="text-sm font-medium pl-2">info@vijata.com</p>
+            <p className="text-sm font-medium pl-2">truongthaohr@gmail.com</p>
           </div>
           <div className="flex items-center gap-3">
             <HiMiniDevicePhoneMobile className="w-4 h-4 text-white"/>
-            <p className="text-sm font-medium pl-2">0123 456 789</p>
+            <p className="text-sm font-medium pl-2">0918 355 686</p>
           </div>
         </div>
 
         {/* Right Column: Partners */}
         <div className=" flex flex-col">
-          <h3 className="text-base font-semibold mb-3">Our Partners:</h3>
+          <h3 className="text-base font-semibold mb-3">Các đối tác:</h3>
           <div className="grid grid-cols-2 gap-4">
             {partners.map((partner, idx) => (
               <div key={idx} className="flex flex-col items-center">

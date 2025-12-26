@@ -5,12 +5,19 @@ const COLOR_ACTIVE = "#FF9933";
 const COLOR_INACTIVE = "#CCCCCC";
 
 const milestones = [
-  { year: 2015, text: "Founded the company" },
-  { year: 2017, text: "Reached 100 clients" },
-  { year: 2019, text: "Expanded internationally" },
-  { year: 2021, text: "Launched new platform" },
-  { year: 2023, text: "Awarded Best Service Provider" },
+  { year: "7/8/2024", text: "Thành lập công ty." },
+  { year: "28/8/2024", text: "Mở lớp tiếng Hoa với 20 học viên đầu tiên." },
+  { year: "1/10/2024", text: "Đối tác chính thức đầu tiên, Trường cao đẳng nghề Việt Nam- Singapore." },
+  { year: "11/8/2025", text: "Đối tác chính thức với trường quốc tế Việt-Hoa." },
+  { year: "29/11/2025", text: "Thành công tổ chức cuộc thi Robot quy mô lớn với đối tác APRA." },
 ];
+// const milestones = [
+//   { year: "7/8/2024", text: "Founded the company" },
+//   { year: 2017, text: "Reached 100 clients" },
+//   { year: 2019, text: "Expanded internationally" },
+//   { year: 2021, text: "Launched new platform" },
+//   { year: 2023, text: "Awarded Best Service Provider" },
+// ];
 
 export default function Timeline() {
   const itemRefs = useRef<(HTMLElement | null)[]>([]);
@@ -50,8 +57,8 @@ export default function Timeline() {
 
   return (
     <section className="w-full mx-auto bg-amber-50 py-12">
-      <h2 className="text-3xl text-blue-600 font-extrabold text-center mb-16">
-        Our Timeline
+      <h2 className="text-4xl text-blue-600 font-bold text-center mb-16">
+        Các mốc thời gian
       </h2>
 
       <div className="relative">

@@ -3,30 +3,56 @@ import React from "react";
 
 const compliments = [
   {
-    title: "Excellent Support",
-    text: "Always ready to help whenever needed. lorem igiggih ygy hhhu",
+    title: "Sự hỗ trợ tuyệt đối",
+    text: "Sẵn sàng hỗ trợ khi học viên gặp khó khăn trong học tập.",
   },
   {
-    title: "High Quality",
-    text: "Delivers consistent results every time. lorem igiggih ygy hhhu",
+    title: "Chất lượng cao",
+    text: "Đạt mục tiêu là kết quả học tập tốt nhất.",
   },
   {
-    title: "Great Communication",
-    text: "Keeps everything clear and transparent. lorem igiggih ygy hhhu",
+    title: "Sự chia sẻ",
+    text: "Luôn lắng nghe các nhu cầu của từng học viên.",
   },
   {
-    title: "Reliable Partner",
-    text: "Can always be trusted with key tasks. lorem igiggih ygy hhhu",
+    title: "Đối tác tin cậy",
+    text: "Chuyên môn và năng lực của đội ngũ giáo viên vững chãi.",
   },
   {
-    title: "Innovative Thinking",
-    text: "Brings fresh ideas to every project. lorem igiggih ygy hhhu",
+    title: "Suy nghĩ sáng tạo",
+    text: "Mang đến những ý tưởng mới mẻ cho mọi bài học.",
   },
   {
-    title: "Efficient Workflow",
-    text: "Saves time without losing precision. lorem igiggih ygy hhhu",
+    title: "Quy trình hiệu quả",
+    text: "Tiết kiệm thời gian mà không giảm hiệu quả học tập.",
   },
 ];
+// const compliments = [
+//   {
+//     title: "Excellent Support",
+//     text: "Always ready to help whenever needed. lorem igiggih ygy hhhu",
+//   },
+//   {
+//     title: "High Quality",
+//     text: "Delivers consistent results every time. lorem igiggih ygy hhhu",
+//   },
+//   {
+//     title: "Great Communication",
+//     text: "Keeps everything clear and transparent. lorem igiggih ygy hhhu",
+//   },
+//   {
+//     title: "Reliable Partner",
+//     text: "Can always be trusted with key tasks. lorem igiggih ygy hhhu",
+//   },
+//   {
+//     title: "Innovative Thinking",
+//     text: "Brings fresh ideas to every project. lorem igiggih ygy hhhu",
+//   },
+//   {
+//     title: "Efficient Workflow",
+//     text: "Saves time without losing precision. lorem igiggih ygy hhhu",
+//   },
+// ];
 
 
 

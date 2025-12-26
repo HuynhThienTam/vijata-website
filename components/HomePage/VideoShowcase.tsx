@@ -5,9 +5,9 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const videos = [
   {
     src: "/videos/video1.mp4",
-    title: "Teacher and students in a Chinese class",
-    subtitle: "A peaceful journey",
-    author: "John Doe",
+    title: "Giáo viên tiếng Hoa và học sinh trên lớp",
+    subtitle: "JKAKDajd djadnd adna",
+    author: "aajda  dak da ",
   },
   {
     src: "/videos/video2.mp4",

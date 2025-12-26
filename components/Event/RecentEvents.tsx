@@ -80,7 +80,7 @@ export default function RecentEvents() {
   return (
     <div className="flex flex-col w-full gap-4 pl-3 pt-9">
       {/* Title */}
-      <h2 className="text-2xl text-gray-800 font-semibold  text-left tracking-wide">RECENT</h2>
+      <h2 className="text-2xl text-gray-800 font-semibold  text-left tracking-wide">GẦN ĐÂY</h2>
 
       {/* Events */}
       <div className="flex flex-col gap-4">
@@ -126,7 +126,7 @@ export default function RecentEvents() {
         href="#"
         className="text-blue-600 text-sm font-semibold hover:underline mt-2"
       >
-        View calendar →
+        Xem lịch →
       </a>
     </div>
   );

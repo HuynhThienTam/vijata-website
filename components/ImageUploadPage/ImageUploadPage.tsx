@@ -18,7 +18,7 @@ export default function ImageUploadPage() {
 
   return (
     <div className="max-w-xl mx-auto p-6">
-      <h1 className="font-bold text-xl mb-4 text-blue-600">Upload Image</h1>
+      <h1 className="font-bold text-xl mb-4 text-blue-600">Tải ảnh lên</h1>
 
       <input
         className="border border-gray-600 my-2  text-gray-600 hover:text-gray-400 hover:border-gray-400"
@@ -31,12 +31,12 @@ export default function ImageUploadPage() {
         onClick={upload}
         className="block mt-4 px-4 py-2 bg-orange-400 hover:bg-orange-500 text-white rounded"
       >
-        Upload
+        Tải lên
       </button>
 
       {url && (
         <div className="mt-4">
-          <p className="text-sm text-gray-600">Copy link:</p>
+          <p className="text-sm text-gray-600">Sao chép link:</p>
           <input value={url} readOnly className="w-full bg-gray-600 text-xs text-amber-200 p-2" />
           <img src={url} className="mt-2 rounded" />
         </div>

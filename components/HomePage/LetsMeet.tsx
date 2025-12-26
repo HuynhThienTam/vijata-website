@@ -24,12 +24,14 @@ export default function LetsMeet() {
         {/* Content */}
         <div className="w-full justify-items-center px-15 pt-6 pb-18">
           <h2 className="text-5xl font-bold text-gray-900 relative z-10">
-            Let’s Meet Maria, John & Tom
+            Hãy gặp gỡ những thầy cô
           </h2>
-          <p className="text-2xl text-gray-600 mt-5 relative z-10 leading-8">
+          {/* <p className="text-2xl text-gray-600 mt-5 relative z-10 leading-8">
             We are passionate about innovative solutions and long-term
-            partnerships. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Iure, at deserunt quia quod vitae labore.
+            partnerships. 
+          </p> */}
+          <p className="text-2xl text-gray-600 mt-5 relative z-10 leading-8">
+            Chúng tôi rất quan tâm đến sự tiến bộ của mỗi em học sinh. Chúng tôi luôn cố gắng để các em có thể tiếp thu kiến thức tốt nhất và có những trải nghiệm quý giá trong quá trình học.
           </p>
         </div>
       </div>

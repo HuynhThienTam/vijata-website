@@ -19,7 +19,7 @@ export default function ImageLibraryPage() {
 
   return (
     <div className="p-6">
-      <h1 className="font-bold text-xl mb-4 text-blue-600">Image Library</h1>
+      <h1 className="font-bold text-xl mb-4 text-blue-600">Thư viện ảnh</h1>
 
       <div className="grid grid-cols-4 gap-5 ">
         {images.map((img) => (
@@ -36,17 +36,17 @@ export default function ImageLibraryPage() {
             <button
               onClick={() =>
                 confirmDeleteToast(
-                  "Are you sure you want to delete this image?",
+                  "Bạn có chắc chắn bạn muốn xoá ảnh này?",
                   async () => {
                     await deleteImageAPI(img.id);
                     load();
-                    toast.success("Image deleted");
+                    toast.success("Ảnh xoá thành công");
                   }
                 )
               }
               className="text-white py-1 px-2 bg-red-500 rounded-sm text-xs mt-1"
             >
-              Delete
+              Xoá
             </button>
             {/* <button
               onClick={async () => {
