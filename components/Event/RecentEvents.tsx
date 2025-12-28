@@ -60,9 +60,13 @@ export default function RecentEvents() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    const month = date.toLocaleString("vi-VN", { month: "short" }); // Jan, Feb
+    const year= date.getFullYear();
+    const month=date.getMonth();
+    const monthVietString = date.toLocaleString("vi-VN", { month: "short" }); // Jan, Feb
     const day = date.getDate();
-    return { month, day };
+    const hour = String(date.getHours()).padStart(2, "0");
+    const minute = String(date.getMinutes()).padStart(2, "0");
+    return { year,month,monthVietString, day, hour, minute };
   };
   const [events, setEvents] = useState<any[]>([]);
     const pageSize = 5;
@@ -85,8 +89,8 @@ export default function RecentEvents() {
       {/* Events */}
       <div className="flex flex-col gap-4">
         {events.map((ev) => {
-          const { month, day } = formatDate(ev.startOn);
-
+          const startOnTime = formatDate(ev.startOn);
+          const finishOnTime = formatDate(ev.finishOn);
           return (
             <div
               key={ev.id}
@@ -95,9 +99,9 @@ export default function RecentEvents() {
               {/* LEFT COLUMN — DATE */}
               <div className="flex flex-col items-center w-1/8 text-center">
                 <span className="text-[12px] font-light uppercase text-gray-500">
-                  {month}
+                  {startOnTime.monthVietString}
                 </span>
-                <span className="text-2xl text-black font-semibold">{day}</span>
+                <span className="text-2xl text-black font-semibold">{startOnTime.day}</span>
               </div>
 
               {/* RIGHT COLUMN — DETAILS */}
@@ -105,7 +109,7 @@ export default function RecentEvents() {
                 {/* Time range */}
                 <div className="flex items-end text-xs text-gray-600 mb-1">
                   <FaCalendar className="w-3 h-3 text-blue-600 mr-1 mb-0.5" />
-                  <p className="">{ev.startOn}-{ev.finishOn}</p>
+                  <p className="">{startOnTime.hour}h{startOnTime.minute}p {startOnTime.day}/{startOnTime.month}/{startOnTime.year} — {finishOnTime.hour}h{finishOnTime.minute}p {finishOnTime.day}/{finishOnTime.month}/{finishOnTime.year}</p>
                 </div>
 
                 {/* Title */}

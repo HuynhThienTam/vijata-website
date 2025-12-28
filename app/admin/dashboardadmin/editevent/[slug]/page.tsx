@@ -1,4 +1,5 @@
 import EditEventPage from "@/components/EditEventPage/EditEventPage";
+import ProtectedLayout from "@/components/Helpers/ProtectedRoute";
 import React from "react";
 type PageProps = {
   params: {
@@ -6,10 +7,12 @@ type PageProps = {
   };
 };
 export default async function Page({ params }: PageProps) {
-  const { slug } = params; 
+  const { slug } = params;
   return (
-    <div className="bg-white">
-        <EditEventPage eventId={slug}/>
-    </div>
+    <ProtectedLayout>
+      <div className="bg-white">
+        <EditEventPage eventId={slug} />
+      </div>
+    </ProtectedLayout>
   );
-};
+}

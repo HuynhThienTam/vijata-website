@@ -4,7 +4,7 @@ import React from "react";
 const displayImages = [
   "/images/display1.jpg",
   "/images/display2.jpg",
-  "/images/display3.jpg",
+  "/images/robot.JPG",
   "/images/display4.jpg",
   "/images/display5.jpg",
   "/images/display6.jpg",
@@ -17,7 +17,7 @@ export default function DisplayImages() {
     <div className="w-full  aspect-[20/6]  mt-12 grid grid-cols-20 gap-2 p-2 bg-gray-200">
       <div className="col-span-7 relative ">
         <Image
-          src="/images/display1.jpg"
+          src="/images/writingontheboard.png"
           alt="aaa"
           fill
           className="object-cover "
@@ -25,7 +25,7 @@ export default function DisplayImages() {
       </div>
       <div className="col-span-3 relative ">
         <Image
-          src="/images/display2.jpg"
+          src="/images/busarriving.jpg"
           alt="aaa"
           fill
           className="object-cover "
@@ -33,7 +33,7 @@ export default function DisplayImages() {
       </div>
       <div className="col-span-5 relative ">
         <Image
-          src="/images/display3.jpg"
+          src="/images/robot.jpg"
           alt="aaa"
           fill
           className="object-cover "
@@ -41,7 +41,7 @@ export default function DisplayImages() {
       </div>
       <div className="col-span-5 row-span-2 relative ">
         <Image
-          src="/images/display4.jpg"
+          src="/images/taipei101.jpg"
           alt="aaa"
           fill
           className="object-cover "
@@ -49,7 +49,7 @@ export default function DisplayImages() {
       </div>
       <div className="col-span-4  relative ">
         <Image
-          src="/images/display5.jpg"
+          src="/images/shufawriting.png"
           alt="aaa"
           fill
           className="object-cover "
@@ -57,7 +57,7 @@ export default function DisplayImages() {
       </div>
       <div className="col-span-4  relative ">
         <Image
-          src="/images/display6.jpg"
+          src="/svgs/turtle.svg"
           alt="aaa"
           fill
           className="object-cover "
@@ -65,7 +65,7 @@ export default function DisplayImages() {
       </div>
       <div className="col-span-7  relative ">
         <Image
-          src="/images/display7.jpg"
+          src="/images/redpapershufa.png"
           alt="aaa"
           fill
           className="object-cover "

@@ -21,7 +21,7 @@ export default function Feeling() {
           eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada
           feugiat. */}
           Ngay từ buổi học đầu tiên tại lớp tiếng Hoa của tổ chức giáo dục
-          Vijita, chúng em đã cảm nhận được một bầu không khí rất khác biệt:
+          Vijata, chúng em đã cảm nhận được một bầu không khí rất khác biệt:
           thân thiện và gần gũi. Không gian lớp học rộng rãi được trang bị đầy
           đủ với bàn ghế và màn hình chiếu.
         </p>
@@ -93,7 +93,7 @@ export default function Feeling() {
           Các bạn trong lớp rất hay chia sẻ kiến thức, luyện nói và hỗ trợ lẫn nhau.
           Dần dần, lớp học trở thành một cộng đồng nhỏ, nơi mọi người cùng tiến
           bộ và cùng tận hưởng niềm vui trong học tập. Chắc chắn, lớp học tiếng
-          Hoa do Vijita tổ chức sẽ là một kỷ niệm không thể nào phai trong lòng
+          Hoa do Vijata tổ chức sẽ là một kỷ niệm không thể nào phai trong lòng
           em và các bạn.
         </p>
       </article>

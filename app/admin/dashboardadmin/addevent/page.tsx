@@ -1,12 +1,14 @@
-
 import AddEventPage from "@/components/AddEventPage/AddEventPage";
+import ProtectedLayout from "@/components/Helpers/ProtectedRoute";
 import React from "react";
 
 const addevent = () => {
   return (
-    <div className="bg-white">
-        <AddEventPage/>
-    </div>
+    <ProtectedLayout>
+      <div className="bg-white">
+        <AddEventPage />
+      </div>
+    </ProtectedLayout>
   );
 };
 

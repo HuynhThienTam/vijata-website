@@ -190,7 +190,7 @@ export default function EventCarousel() {
   return (
     <section className="relative w-[90%] mx-auto py-9 ">
       <h2 className="text-2xl text-gray-800 font-semibold  text-left pl-7">
-        CÁC SỰ KIỆN CỦA VIJITA
+        CÁC SỰ KIỆN CỦA VIJATA
       </h2>
 
       <div className="slider-container  events-slider pt-24  ">

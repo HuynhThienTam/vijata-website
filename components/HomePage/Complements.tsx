@@ -16,15 +16,15 @@ const compliments = [
   },
   {
     title: "Đối tác tin cậy",
-    text: "Chuyên môn và năng lực của đội ngũ giáo viên vững chãi.",
+    text: "Chuyên môn và năng lực của đội ngũ giáo viên vững chắc.",
   },
   {
     title: "Suy nghĩ sáng tạo",
     text: "Mang đến những ý tưởng mới mẻ cho mọi bài học.",
   },
   {
-    title: "Quy trình hiệu quả",
-    text: "Tiết kiệm thời gian mà không giảm hiệu quả học tập.",
+    title: "Thời gian hiệu quả",
+    text: "Tiết kiệm thời gian mà không giảm chất lượng học tập.",
   },
 ];
 // const compliments = [

@@ -3,7 +3,6 @@
 import { useAuth } from "@/components/Context/useAuth";
 import { useRouter} from "next/navigation";
 import { useEffect } from "react";
-
 export default function ProtectedLayout({
   children,
 }: {
@@ -16,7 +15,7 @@ export default function ProtectedLayout({
   useEffect(() => {
     if (!isLoggedIn()) {
       // router.replace(`/?from=${pathname}`);
-      router.replace(`/`);
+      router.replace(`/not-found`);
     }
   // }, [isLoggedIn, pathname, router]);
    }, [isLoggedIn,  router]);

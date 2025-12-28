@@ -71,16 +71,30 @@ const renderArticlePart = (part: any, idx: number) => {
       return null;
   }
 };
+const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const year= date.getFullYear();
+    const month=date.getMonth();
+    const monthVietString = date.toLocaleString("vi-VN", { month: "short" }); // Jan, Feb
+    const day = date.getDate();
+    const hour = String(date.getHours()).padStart(2, "0");
+    const minute = String(date.getMinutes()).padStart(2, "0");
+    return { year,month,monthVietString, day, hour, minute };
+  };
 export default function NewsDetailPage({eventId}: {eventId: string}) {
   const [event, setEvent] = useState<any>(null);
   const [eventContentBlocks, setEventContentBlocks] = useState<EventContentBlockGet[]>([]);
   const eventIdNumber = Number(eventId);
+  const [startOnTime, setStartOnTime] =  useState<any>({});
+  const [finishOnTime, setFinishOnTime]  =  useState<any>({});
   // const eventIdNumber= 2007;;
   useEffect(() => {
     EventGetByIdAPI(eventIdNumber).then(res => {
       console.log("API DATA:", res?.data);
       setEvent(res?.data);
       setEventContentBlocks(res?.data?.eventContent || []);
+      setStartOnTime(formatDate(res?.data?.startOn||""));
+      setFinishOnTime(formatDate(res?.data?.finishOn||""));
     }).catch(err => {
       console.error("API error:", err);
     });
@@ -97,16 +111,17 @@ export default function NewsDetailPage({eventId}: {eventId: string}) {
   return (
     <main className="max-w-4xl mx-auto px-6 py-12">
       {/* Ảnh bìa lớn */}
-      <div className="w-full h-[400px] relative mb-10">
+      <div className=" w-full flex justify-center  relative mb-10">
         <Image
           src={imageSrc}
           alt="Cover"
-          fill
+          width={600}     // bất kỳ số nào
+          height={400}
           unoptimized
-          className="object-cover rounded-xl brightness-95"
+          className="w-[60%] h-auto object-cover rounded-xl brightness-95"
         />
       </div>
-
+       <p className="text-sm font-light text-gray-500 pb-8">Thời gian sự kiện: {startOnTime.hour} giờ {startOnTime.minute} phút, ngày {startOnTime.day}/{startOnTime.month}/{startOnTime.year} — {finishOnTime.hour} giờ {finishOnTime.minute} phút, ngày {finishOnTime.day}/{finishOnTime.month}/{finishOnTime.year}</p>
       {/* Nội dung bài */}
       <article className="prose prose-lg max-w-none">
         {eventContentBlocks.map((part, idx) => renderArticlePart(part, idx))}
