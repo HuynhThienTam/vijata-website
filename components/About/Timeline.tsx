@@ -108,13 +108,13 @@ export default function Timeline() {
                       >
                         {m.text.split(".")[0]}
                       </h3>
-                      <p
+                      {/* <p
                         className={`mt-2 text-gray-600 text-sm ${
                           isActive ? "text-[#FF9933]" : ""
                         }`}
                       >
                         {m.text}
-                      </p>
+                      </p> */}
                     </div>
                   )}
                 </div>
@@ -177,7 +177,7 @@ export default function Timeline() {
                           dominantBaseline="middle"
                           textAnchor="middle"
                           // fontSize="12"
-                          fontSize={circleSize / 5}
+                          fontSize={circleSize / 6}
                           fill={isActive ? COLOR_ACTIVE : "#6b6b6b"}
                           fontWeight="600"
                         >
@@ -230,13 +230,13 @@ export default function Timeline() {
                       >
                         {m.text.split(".")[0]}
                       </h3>
-                      <p
+                      {/* <p
                         className={`mt-2 text-gray-600 text-sm ${
                           isActive ? "text-[#FF9933]" : ""
                         }`}
                       >
                         {m.text}
-                      </p>
+                      </p> */}
                     </div>
                   )}
                 </div>
@@ -257,13 +257,13 @@ export default function Timeline() {
                     >
                       {m.text.split(".")[0]}
                     </h3>
-                    <p
+                    {/* <p
                       className={`mt-1 text-gray-600 text-sm ${
                         isActive ? "text-[#FF9933]" : ""
                       }`}
                     >
                       {m.text}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>

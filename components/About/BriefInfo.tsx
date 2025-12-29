@@ -9,7 +9,7 @@ export default function BriefInfo() {
         {/* <span className="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500  bg-clip-text text-transparent inline-block "> */}
         Bạn biết những gì
         <br />
-        về Vijata!{" "}
+        về Vijata?{" "}
         <FaRocket className=" inline-block align-baseline ml-[5xl] pt-1 text-pink-400" />
         {/* </span> */}
       </h2>

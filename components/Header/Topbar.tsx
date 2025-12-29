@@ -70,7 +70,11 @@ export default function TopBar() {
       {isLoggedIn() ? (
         <div className="flex items-center space-x-6 text-white">
           <div className="text-white">Welcome, {user?.userName}</div>
-          <Link href="/" onClick={logout} className="text-white hover:text-gray-200">
+          <Link
+            href="/"
+            onClick={logout}
+            className="text-white hover:text-gray-200"
+          >
             Log out
           </Link>
         </div>
@@ -79,12 +83,17 @@ export default function TopBar() {
         <div className="flex items-center space-x-2 text-white">
           {/* <span>Follow us on:</span> */}
           <span>Theo dõi trên:</span>
-          <a href="#">
+          <a
+            href="https://www.facebook.com/profile.php?id=61585360785795"
+            target="_blank"
+            rel="noopener noreferrer"
+            draggable
+          >
             <img src="/icons/facebook.png" className="w-4 h-4" />
           </a>
-          <a href="#">
+          {/* <a href="#">
             <img src="/icons/instagram.png" className="w-4 h-4" />
-          </a>
+          </a> */}
         </div>
       )}
     </div>

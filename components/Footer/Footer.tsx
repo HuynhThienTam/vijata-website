@@ -33,10 +33,10 @@ export default function Footer() {
         <div className="w-1/4 flex flex-col gap-y-5">
           {/* Our contact details */}
           <h3 className="text-base font-semibold mb-3">Thông tin liên hệ:</h3>
-          <div className="flex items-center gap-3">
-            <GrLocation className="w-4 h-4 text-white" />
+          <div className="flex items-start gap-3">
+            <GrLocation className="w-4 h-4 text-white " />
             <p className="text-sm font-medium pl-2">
-              123 Example Street, Hanoi
+              Số 1227, Đường Cách Mạng Tháng 8,<br />P.Thủ Dầu Một, TP.Hồ Chí Minh
             </p>
           </div>
           <div className="flex items-center gap-3">
