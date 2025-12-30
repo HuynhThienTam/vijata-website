@@ -2,7 +2,7 @@ import axios from "axios";
 import { handleError } from "../Helpers/ErrorHandler";
 import { EventContentBlockCreate, EventContentBlockGet } from "../Models/EventContentBlock";
 
-const api = "http://localhost:5210/api/eventcontentblock/";
+const api = process.env.NEXT_PUBLIC_API_URL + "/api/eventcontentblock/";
 
 export const EventContentBlockPostAPI = async (
   type: string,

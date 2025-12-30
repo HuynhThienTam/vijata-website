@@ -1,7 +1,7 @@
 // Services/ImageService.ts
 import axios from "axios";
 
-const api = "http://localhost:5210/api/images";
+const api = process.env.NEXT_PUBLIC_API_URL + "/api/images";
 
 export const uploadImageAPI = (file: File) => {
   const formData = new FormData();

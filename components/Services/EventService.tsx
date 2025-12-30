@@ -3,7 +3,7 @@ import { handleError } from "../Helpers/ErrorHandler";
 import { EventCreate, EventGet } from "../Models/Event";
 import { toast } from "react-toastify";
 
-const api = "http://localhost:5210/api/event/";
+const api = process.env.NEXT_PUBLIC_API_URL + "/api/event/";
 export const EventGetByPageAPI = async (pageNumber: number, pageSize: number) => {
   try {
     const data = await axios.get<EventGet[]>(api + `?SortBy=CreatedOn&IsDescending=true&PageNumber=${pageNumber}&PageSize=${pageSize}`);
