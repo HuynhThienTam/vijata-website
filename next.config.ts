@@ -1,19 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   eslint: {
     ignoreDuringBuilds: true,
   },
   images: {
-    // remotePatterns: [
-    //   {
-    //     protocol: "http",
-    //     hostname: "localhost",
-    //     port: "5210",
-    //     pathname: "/**",
-    //   },
-    // ],
     remotePatterns: [
       {
         protocol: "http",
@@ -21,10 +12,7 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-    domains: [
-      "www.ville-saintemarie.re",
-      // thêm các domain khác nếu cần
-    ],
+    domains: ["www.ville-saintemarie.re"],
   },
 };
 
