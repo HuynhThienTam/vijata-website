@@ -33,7 +33,7 @@ export default function DisplayImages() {
       </div>
       <div className="col-span-5 relative ">
         <Image
-          src="/images/robot.JPG"
+          src="/images/robot.jpg"
           alt="aaa"
           fill
           className="object-cover "
