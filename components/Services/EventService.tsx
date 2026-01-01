@@ -12,6 +12,16 @@ export const EventGetByPageAPI = async (pageNumber: number, pageSize: number) =>
     handleError(error);
   }
 };
+export async function fetchEventById(id: string) {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/event/${id}`,
+    { cache: "no-store" } // luôn fresh
+  );
+
+  if (!res.ok) return null;
+  return res.json();
+}
+
 export const EventGetByIdAPI = async (id: number) => {
   console.log("🔍 Fetching event with ID:", `${api}${id}`);
   try {

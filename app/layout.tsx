@@ -22,8 +22,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vijata landing page",
-  description: "Vijata landing page using Next.js 15",
+  title: "Vijata",
+  description: "Website chính thức của Công ty TNHH Việt Nhật Đài",
+  openGraph: {
+    title: "Vijata",
+    description: "Website chính thức của Công ty TNHH Việt Nhật Đài",
+    siteName: "Vijata",
+    type: "website",
+    locale: "vi_VN",
+    images: [
+      {
+        url: "https://vijata-website.vercel.app/images/vijatameta.png",
+        width: 1200,
+        height: 630,
+        alt: "About Vijata",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -41,7 +56,6 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
-          
         </Providers>
       </body>
     </html>
