@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
+        protocol: "https",
         hostname: "huynhthientam-001-site1.anytempurl.com",
         pathname: "/**",
       },
