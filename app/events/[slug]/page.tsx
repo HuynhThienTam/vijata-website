@@ -27,10 +27,10 @@ export async function generateMetadata(
 
   return {
     title: event.title,
-    description: event.shortDescription || event.content?.slice(0, 160),
+    description:  event.content?.slice(0, 160),
     openGraph: {
       title: event.title,
-      description: event.shortDescription,
+      description: event.content?.slice(0, 160),
       images: [
         {
           url: imageSrc,
