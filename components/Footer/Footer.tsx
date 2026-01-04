@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="flex items-start gap-3">
             <GrLocation className="w-4 h-4 text-white " />
             <p className="text-sm font-medium pl-2">
-              Số 1227, Đường Cách Mạng Tháng 8,<br />P.Thủ Dầu Một, TP.Hồ Chí Minh
+              Số 1277, Đường Cách Mạng Tháng 8,<br />P.Thủ Dầu Một, TP.Hồ Chí Minh
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -44,8 +44,8 @@ export default function Footer() {
               <LuClock className="w-4 h-4 text-white" />
               <p className="text-sm font-medium pl-5">Thứ 2 -</p>
               <div className="flex-col ">
-                <p className="text-sm font-medium ">Thứ 6: 8AM - 17PM</p>
-                <p className="text-sm font-medium ">Thứ 7: 8AM - 12AM</p>
+                <p className="text-sm font-medium ">Thứ 6: 8:00 - 17:00</p>
+                <p className="text-sm font-medium ">Thứ 7: 8:00 - 12:00</p>
               </div>
             </div>
           </div>

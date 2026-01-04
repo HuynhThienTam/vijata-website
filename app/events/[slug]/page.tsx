@@ -24,7 +24,7 @@ export async function generateMetadata(
     event.coverPhoto?.startsWith("http")
       ? event.coverPhoto
       : "https://vijata-website.vercel.app/images/vijatameta.png";
-
+ 
   return {
     title: event.title,
     description:  event.content?.slice(0, 160),
@@ -43,7 +43,7 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: PageProps) {
-  const { slug } = params; // ✅ OK
+  const { slug } = params; 
 
   return (
     <div className="bg-white">
